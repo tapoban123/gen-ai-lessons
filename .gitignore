@@ -1,0 +1,7 @@
+# cache
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+
+# secrets
+.env
