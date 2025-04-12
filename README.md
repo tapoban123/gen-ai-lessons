@@ -11,4 +11,5 @@
 - Transformer architecture
 - OpenAI api
 - Langchain
+    - [Open Source Github](https://github.com/langchain-ai/langchain)
 - Vector database
