@@ -19,9 +19,11 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
 )
 
-tools = load_tools(tool_names=["serpapi"], serpapi_api_key=GOOGLE_SERP_API_KEY, llm=llm)
+# tools = load_tools(tool_names=["serpapi"], serpapi_api_key=GOOGLE_SERP_API_KEY, llm=llm)
+tools = load_tools(tool_names=["wikipedia"], llm=llm)
 
 self_ask_with_search = initialize_agent(
     tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
 )
-self_ask_with_search.run("What are some of the most recent news about the world?")
+# self_ask_with_search.run("What are some of the most recent news about the world?")
+self_ask_with_search.run("Tell me about recent cricket match.")
