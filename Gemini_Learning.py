@@ -1,29 +1,24 @@
-# %pip install -qU langchain-google-genai
+# %pip install langchain-google-genai
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+from Chains.utils.my_enums import API_KEYS, LLM_MODELS
 
 
 llm = ChatGoogleGenerativeAI(
-    api_key=GEMINI_API_KEY,
-    model="gemini-2.0-flash",
+    api_key=API_KEYS.GEMINI_API_KEY,
+    model=LLM_MODELS.GEMINI_MODEL,
     temperature=0,
     max_tokens=None,
     timeout=None,
-    max_retries=2,   
+    max_retries=2,
 )
 
 messages = [
     (
         "system",
-        "You are a helpful assistent that help students of school and college to simplify the activity of studying."
+        "You are a helpful assistent that help students of school and college to simplify the activity of studying.",
     ),
-    ("human", "I want to learn to build mobile apps. How should I start?")
+    ("human", "I want to learn to build mobile apps. How should I start?"),
 ]
 
 ai_msg = llm.invoke(messages)
