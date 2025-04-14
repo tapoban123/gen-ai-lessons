@@ -11,13 +11,19 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
 )
 
-prompt = PromptTemplate.from_template("Suggest me some good names for a {type} restaurant.")
+prompt = PromptTemplate.from_template(
+    "Suggest me some good names for a {type} restaurant."
+)
 
-prompt2 = PromptTemplate.from_template("Suggest me some of the best dishes to be served at {type} restaurant.")
+prompt2 = PromptTemplate.from_template(
+    "Suggest me some of the best dishes to be served at {type} restaurant."
+)
 
 chain1 = prompt | llm | StrOutputParser()
 chain2 = prompt2 | llm | StrOutputParser()
 
-final_chain = SimpleSequentialChain(chains=[chain1, chain2])
-# ai_answer = final_chain.invoke("indian")
-# print(ai_answer)    
+final_chain = SimpleSequentialChain(
+    chains=[chain1, chain2], input_key="indian", output_key="type"
+)
+# ai_answer = final_chain({"type": "indian", "cuisine": "indian"})
+# print(ai_answer)
