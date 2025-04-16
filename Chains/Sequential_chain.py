@@ -1,5 +1,4 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.chains.sequential import SequentialChain
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from utils.my_enums import API_KEYS, LLM_MODELS
@@ -16,12 +15,12 @@ prompt = PromptTemplate.from_template(
 )
 
 prompt2 = PromptTemplate.from_template(
-    "Tell me the strategy of building a successful business in {industry}."
+    "Tell me the strategy of building a successful business on manufacturing of {product}."
 )
 
 chain1 = prompt | llm | StrOutputParser()
 chain2 = prompt2 | llm | StrOutputParser()
 
 final_chain = chain1 | chain2
-ai_answer = final_chain.invoke({"product": "Electronic Gadgets", "industry": "IOT"})
+ai_answer = final_chain.invoke({"product": "Electronic Gadgets"})
 print(ai_answer)

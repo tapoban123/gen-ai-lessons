@@ -1,5 +1,12 @@
 # Learning Generative AI using Python
 
+## Running a particular module from the project:
+```bash
+python -m folder_name.file_name
+
+python -m  Chains.Sequential_chain
+```
+
 ## Tutorials:
 
 - [Langchain in-depth Playlist (14+ Hours) by CampusX](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)

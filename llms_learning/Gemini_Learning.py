@@ -1,7 +1,7 @@
 # %pip install langchain-google-genai
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from Chains.utils.my_enums import API_KEYS, LLM_MODELS
+from utils.my_enums import API_KEYS, LLM_MODELS
 
 
 llm = ChatGoogleGenerativeAI(
