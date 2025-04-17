@@ -19,3 +19,4 @@ class LLM_MODELS(Enum):
     GEMINI_MODEL = "gemini-2.0-flash"
     HF_MODEL_TINY_LLAMA = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
     HF_EMBEDDING_MODEL_SENTENCE_TRANSFORMER = "sentence-transformers/all-MiniLM-L6-v2"
+    GEMINI_EMBEDDING_MODEL = "models/text-embedding-004"
