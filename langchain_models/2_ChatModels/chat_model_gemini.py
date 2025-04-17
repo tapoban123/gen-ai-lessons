@@ -13,13 +13,15 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
 )
 
-messages = [
-    (
-        "system",
-        "You are a helpful assistent that help students of school and college to simplify the activity of studying.",
-    ),
-    ("human", "I want to learn to build mobile apps. How should I start?"),
-]
+# messages = [
+#     (
+#         "system",
+#         "You are a helpful assistent that help students of school and college to simplify the activity of studying.",
+#     ),
+#     ("human", "I want to learn to build mobile apps. How should I start?"),
+# ]
 
-ai_msg = llm.invoke(messages)
+message = "What is the capital of India?"
+
+ai_msg = llm.invoke(message)
 print(ai_msg.content)
