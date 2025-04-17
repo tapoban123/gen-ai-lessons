@@ -21,7 +21,8 @@ llm = ChatGoogleGenerativeAI(
 #     ("human", "I want to learn to build mobile apps. How should I start?"),
 # ]
 
-message = "What is the capital of India?"
+# message = "What is the capital of India?"
+message = "Write me a 5 line poem on Sun."
 
 ai_msg = llm.invoke(message)
 print(ai_msg.content)

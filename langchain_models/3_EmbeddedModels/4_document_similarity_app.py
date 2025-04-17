@@ -15,7 +15,7 @@ documents = [
     "Paris is the capital of France.",
 ]
 
-query = "Tell me about Delhi."
+query = "Tell me about France."
 
 docs_vector = embedding.embed_documents(documents)
 query_vector = embedding.embed_query(query)
@@ -33,5 +33,5 @@ scores = list(enumerate(float64_to_float_list))
 sorted_scores = sorted(scores, key=lambda x: x[1])
 
 most_similar_index, most_similar_score = sorted_scores[-1]
-print(query)
-print(documents[most_similar_index])
+print(f"User: {query}")
+print(f"Output: {documents[most_similar_index]}")
