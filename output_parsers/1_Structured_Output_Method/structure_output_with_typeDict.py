@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, Annotated, Optional
 from utils.my_enums import API_KEYS, LLM_MODELS
 from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -11,8 +11,10 @@ llm = ChatGoogleGenerativeAI(
 
 # Schema
 class Review(TypedDict):
-    summary: str
+    # With Annotated we add a helper message for the LLM to understand the task.
+    summary: Annotated[str, "A brief summary of the review."] 
     sentiment: str
+    pros: Annotated[Optional[list[str]], "Write down all the pros in a list."]
 
 
 structured_model = llm.with_structured_output(Review)
