@@ -5,6 +5,24 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from utils.my_enums import API_KEYS, LLM_MODELS
 
 
+### Delcaring safety_settings
+# safety_settings = [
+#     SafetySetting(
+#         category=HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+#         threshold=HarmBlockThreshold.BLOCK_ONLY_HIGH,
+#     ),
+# ]
+
+# prompt = """
+#     Write a list of 2 disrespectful things that I might say to the universe after stubbing my toe in the dark.
+# """
+
+# response = model.generate_content(
+#     prompt,
+#     safety_settings=safety_settings,
+# )
+
+# print(response)
 llm = ChatGoogleGenerativeAI(
     api_key=API_KEYS.GEMINI_API_KEY, model=LLM_MODELS.GEMINI_MODEL
 )
