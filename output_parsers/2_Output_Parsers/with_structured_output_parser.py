@@ -17,7 +17,7 @@ schema = [
 parser = StructuredOutputParser.from_response_schemas(schema)
 
 template = PromptTemplate(
-    template="Give 3 about the {topic}",
+    template="Give 3 facts about the {topic} \n{format_instructions}",
     input_variables=["topic"],
     partial_variables={"format_instructions": parser.get_format_instructions()}
 )
@@ -25,8 +25,15 @@ template = PromptTemplate(
 
 prompt = template.invoke({"topic": "black hole"})
 
-result = llm.invoke(prompt)
+# result = llm.invoke(prompt)
 
-final_result = parser.parse_result(result.content)
+# final_result = parser.parse(result.content)
 
-print(final_result)
+# print(final_result)
+
+chain = template | llm | parser
+
+result = chain.invoke({"topic": "black hole"})
+
+print(result)
+
