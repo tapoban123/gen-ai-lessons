@@ -51,5 +51,8 @@ with open("Chains/Parallel_Chains/content.txt", mode="r") as f_read:
     content = f_read.read()
     result = chain_of_chains.invoke({"content": content})
     
-    with open("Chains/Parallel_Chains/notes_and_quiz.txt", mode="w") as f_write:
+    with open("Chains/Parallel_Chains/notes_and_quiz.md", mode="w") as f_write:
         f_write.write(result)
+        
+
+chain_of_chains.get_graph().print_ascii()   
