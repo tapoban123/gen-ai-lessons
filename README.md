@@ -1,18 +1,5 @@
 # Learning Generative AI using Python
 
-## My GenAI Apps using Langchain
-1. [AI Chatbot with custom parameters](https://app-ai-chatbotgit-mlx6hr9mant2ffh4n3q3ak.streamlit.app/)
-
-2. [Customer Feedback Sentiment Analysis Bot](https://langchain-appsgit-lgjyhyr9bgoijdfroteosl.streamlit.app/)
-
-
-## Running a particular module from the project:
-```bash
-python -m folder_name.file_name
-
-python -m  Chains.Sequential_chain
-```
-
 ## Tutorials:
 
 - [Langchain in-depth Playlist (17+ Hours) by CampusX](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)
@@ -22,10 +9,31 @@ python -m  Chains.Sequential_chain
 
 - [Playlist by freecodecamp](https://youtube.com/playlist?list=PLkz_y24mlSJY7hlQ-GyDgUCWz8TyIX_S3&si=D9AytdepUlM19_e7)
 
-## Topics covered:
+## My GenAI Apps using Langchain
+
+1. [AI Chatbot with custom parameters](https://app-ai-chatbotgit-mlx6hr9mant2ffh4n3q3ak.streamlit.app/)
+
+2. [Customer Feedback Sentiment Analysis Bot](https://langchain-appsgit-lgjyhyr9bgoijdfroteosl.streamlit.app/)
+
+## Topics to learn in GenAI:
 
 - Transformer architecture
-- OpenAI api
+- Open-source LLM apis
 - Langchain
   - [Open Source Github](https://github.com/langchain-ai/langchain)
-- Vector database
+  - Chains in Langchain
+- Vector Databases
+
+## Platforms for Open-Source/Free LLM apis
+
+1. [Google Gemini](https://ai.google.dev/gemini-api/docs/quickstart?lang=python)
+1. [Hugging Face](https://huggingface.co/models)
+1. [Open Router API](https://openrouter.ai/models?max_price=0)
+
+## Running a particular module from the project:
+
+```bash
+python -m folder_name.file_name
+
+python -m  Chains.Sequential_chain
+```
