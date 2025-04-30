@@ -29,7 +29,7 @@
 1. [Google Gemini](https://ai.google.dev/gemini-api/docs/quickstart?lang=python)
 2. [Hugging Face](https://huggingface.co/models)
 3. [Open Router API](https://openrouter.ai/models?max_price=0)
-4. [Fee LLM API resources Github](https://github.com/cheahjs/free-llm-api-resources?tab=readme-ov-file)
+4. [Free LLM API resources Github](https://github.com/cheahjs/free-llm-api-resources?tab=readme-ov-file)
 
 ## Running a particular module from the project:
 
