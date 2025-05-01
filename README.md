@@ -12,6 +12,7 @@
 - [Fine-Tuning LLMs](https://youtu.be/iOdFUJiB0Zc?si=2muaepFpK5g1V9TS)
 
 ## Articles
+
 - [Essential Topics to master Generative AI](https://odsc.medium.com/10-essential-topics-to-master-llms-and-generative-ai-8dba948c7829)
 
 ## My GenAI Apps using Langchain
@@ -20,15 +21,19 @@
 
 2. [Customer Feedback Sentiment Analysis Bot](https://langchain-appsgit-lgjyhyr9bgoijdfroteosl.streamlit.app/)
 
-## Topics to learn in GenAI:
+## [Roadmap](https://youtu.be/3on3S-fbeRI?si=dmu69duKfzS1SFa-) to master GenAI:
 
-- Transformer architecture
-- Fine-tuning LLMs
-- Open-source LLM apis
-- Langchain
-  - [Open Source Github](https://github.com/langchain-ai/langchain)
-  - Chains in Langchain
-- Vector Databases
+- Fundamentals of ML using Python
+- In-Depth knowledge of Deep Learning
+  - Neural Networks - ANN, CNN, RNN
+  - Transformer Architecture
+- Prompt Engineering - Design and Craft effective prompts
+- Open-source LLMs, [Langchain](https://github.com/langchain-ai/langchain) and Vector DB
+- Fine Tuning LLMs
+- AI Agents
+  - In-depth knowledge
+  - Building them
+- Build Portfolio apps
 
 ## Platforms for Open-Source/Free LLM apis
 
