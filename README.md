@@ -9,6 +9,11 @@
 
 - [Playlist by freecodecamp](https://youtube.com/playlist?list=PLkz_y24mlSJY7hlQ-GyDgUCWz8TyIX_S3&si=D9AytdepUlM19_e7)
 
+- [Fine-Tuning LLMs](https://youtu.be/iOdFUJiB0Zc?si=2muaepFpK5g1V9TS)
+
+## Articles
+- [Essential Topics to master Generative AI](https://odsc.medium.com/10-essential-topics-to-master-llms-and-generative-ai-8dba948c7829)
+
 ## My GenAI Apps using Langchain
 
 1. [AI Chatbot with custom parameters](https://app-ai-chatbotgit-mlx6hr9mant2ffh4n3q3ak.streamlit.app/)
@@ -18,6 +23,7 @@
 ## Topics to learn in GenAI:
 
 - Transformer architecture
+- Fine-tuning LLMs
 - Open-source LLM apis
 - Langchain
   - [Open Source Github](https://github.com/langchain-ai/langchain)
