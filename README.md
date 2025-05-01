@@ -23,12 +23,13 @@
 
 ## [Roadmap](https://youtu.be/3on3S-fbeRI?si=dmu69duKfzS1SFa-) to master GenAI:
 
-- Fundamentals of ML using Python
-- In-Depth knowledge of Deep Learning
+- Fundamentals of ML using Python [[COURSE]](https://youtu.be/JxgmHe2NyeY?si=qAr42rse2dc7H12k)
+- In-Depth knowledge of Deep Learning [[COURSE]](https://youtu.be/2dH_qjc9mFg?si=jnPLcIH3E38LdXNc)
   - Neural Networks - ANN, CNN, RNN
   - Transformer Architecture
-- Prompt Engineering - Design and Craft effective prompts
-- Open-source LLMs, [Langchain](https://github.com/langchain-ai/langchain) and Vector DB
+- Prompt Engineering - Design and Craft effective prompts [[COURSE]](https://www.udemy.com/course/prompt-engineering-for-ai/?couponCode=KEEPLEARNING)
+- Open-source LLMs, [Langchain](https://github.com/langchain-ai/langchain) [[COURSE]](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)
+- Vector DB [[COURSE]](https://youtu.be/8KrTO9bS91s?si=k66Gwy27794HeKzb)
 - Fine Tuning LLMs
 - AI Agents
   - In-depth knowledge
