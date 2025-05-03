@@ -1,19 +1,11 @@
 # Learning Generative AI using Python
 
-## Tutorials:
-
-- [Langchain in-depth Playlist (17+ Hours) by CampusX](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)
-- [GenAI Full Course (30+ Hours) by INeuronAI](https://youtu.be/mEsleV16qdo?si=jC0SqTPvP1hDju0-)
-
-- [GenAI for Developers (20+ Hours) by BAPPY AHMED](https://youtu.be/F0GQ0l2NfHA?si=iF59yq6fz-d34Pdq)
-
-- [Playlist by freecodecamp](https://youtube.com/playlist?list=PLkz_y24mlSJY7hlQ-GyDgUCWz8TyIX_S3&si=D9AytdepUlM19_e7)
-
-- [Fine-Tuning LLMs](https://youtu.be/iOdFUJiB0Zc?si=2muaepFpK5g1V9TS)
+## [Official Documentation](https://academy.langchain.com/)
 
 ## Articles
 
 - [Essential Topics to master Generative AI](https://odsc.medium.com/10-essential-topics-to-master-llms-and-generative-ai-8dba948c7829)
+- [LangChain VS LangGraph VS LangFlow VS LangSmith](https://medium.com/@anshuman4luv/langchain-vs-langgraph-vs-langflow-vs-langsmith-a-detailed-comparison-74bc0d7ddaa9)
 
 ## My GenAI Apps using Langchain
 
@@ -23,12 +15,16 @@
 
 ## [Roadmap](https://youtu.be/3on3S-fbeRI?si=dmu69duKfzS1SFa-) to master GenAI:
 
-- Fundamentals of ML using Python [[COURSE]](https://youtu.be/JxgmHe2NyeY?si=qAr42rse2dc7H12k)
-- In-Depth knowledge of Deep Learning [[COURSE]](https://youtu.be/2dH_qjc9mFg?si=jnPLcIH3E38LdXNc)
+- Fundamentals of ML using Python [[COURSE 6+ Hrs]](https://youtu.be/JxgmHe2NyeY?si=qAr42rse2dc7H12k)
+- In-Depth knowledge of Deep Learning [[COURSE 52+ Hrs]](https://youtube.com/playlist?list=PLKnIA16_RmvYuZauWaPlRTC54KxSNLtNn&si=mWeQdXZxLI4AiLBU)
   - Neural Networks - ANN, CNN, RNN
   - Transformer Architecture
-- Prompt Engineering - Design and Craft effective prompts [[COURSE]](https://www.udemy.com/course/prompt-engineering-for-ai/?couponCode=KEEPLEARNING)
-- Open-source LLMs, [Langchain](https://github.com/langchain-ai/langchain) [[COURSE]](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)
+- Prompt Engineering - Design and Craft effective prompts [[COURSE 22+ Hrs]](https://www.udemy.com/course/prompt-engineering-for-ai/?couponCode=KEEPLEARNING)
+- [Langchain](https://github.com/langchain-ai/langchain) [[COURSE 19+ Hrs]](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp) 
+  - Open-source LLMs
+  - Langgraph [[COURSE 15+ Hrs]](https://youtube.com/playlist?list=PLQxDHpeGU14AJ4sBRWLBqjMthxrLXJmgF&si=wOkjSc2NlBjWVvNM)
+  - Langsmith
+  - Langflow
 - Vector DB [[COURSE]](https://youtu.be/8KrTO9bS91s?si=k66Gwy27794HeKzb)
 - Fine Tuning LLMs
 - AI Agents
@@ -50,3 +46,15 @@ python -m folder_name.file_name
 
 python -m  Chains.Sequential_chain
 ```
+
+
+## GenAI / Langchain Tutorials:
+
+- [Langchain in-depth Playlist (19+ Hours) by CampusX](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp)
+- [GenAI Full Course (30+ Hours) by INeuronAI](https://youtu.be/mEsleV16qdo?si=jC0SqTPvP1hDju0-)
+
+- [GenAI for Developers (20+ Hours) by BAPPY AHMED](https://youtu.be/F0GQ0l2NfHA?si=iF59yq6fz-d34Pdq)
+
+- [Playlist by freecodecamp](https://youtube.com/playlist?list=PLkz_y24mlSJY7hlQ-GyDgUCWz8TyIX_S3&si=D9AytdepUlM19_e7)
+
+- [Fine-Tuning LLMs](https://youtu.be/iOdFUJiB0Zc?si=2muaepFpK5g1V9TS)
