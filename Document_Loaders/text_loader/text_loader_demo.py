@@ -10,4 +10,6 @@ docs = loader.load()
 
 print(len(docs))
 
+print(type(docs)) # Document object
+
 print(docs[0].metadata)
