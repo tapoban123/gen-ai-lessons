@@ -15,6 +15,7 @@
 
 ## [Roadmap](https://youtu.be/3on3S-fbeRI?si=dmu69duKfzS1SFa-) to master GenAI:
 
+- Linear Algebra [[COURSE 28+ Hrs]](https://youtube.com/playlist?list=PLE7DDD91010BC51F8&si=N3GT_rotF92ZYSXD)
 - Fundamentals of ML using Python [[COURSE 6+ Hrs]](https://youtu.be/JxgmHe2NyeY?si=qAr42rse2dc7H12k)
 - In-Depth knowledge of Deep Learning [[COURSE 52+ Hrs]](https://youtube.com/playlist?list=PLKnIA16_RmvYuZauWaPlRTC54KxSNLtNn&si=mWeQdXZxLI4AiLBU)
   - Neural Networks - ANN, CNN, RNN
