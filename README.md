@@ -26,6 +26,7 @@
   - Langgraph [[COURSE 15+ Hrs]](https://youtube.com/playlist?list=PLQxDHpeGU14AJ4sBRWLBqjMthxrLXJmgF&si=wOkjSc2NlBjWVvNM)
   - Langsmith
   - Langflow
+  - Langserve
 - Vector DB [[COURSE]](https://youtu.be/8KrTO9bS91s?si=k66Gwy27794HeKzb)
 - Fine Tuning LLMs
 - AI Agents
