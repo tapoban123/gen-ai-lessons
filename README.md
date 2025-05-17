@@ -13,6 +13,8 @@
 
 2. [Customer Feedback Sentiment Analysis Bot](https://langchain-appsgit-lgjyhyr9bgoijdfroteosl.streamlit.app/)
 
+3. [Psychometric Test Bot for Career Analysis](https://mainpy-ery2ds9wwuxh7cicqonjsh.streamlit.app/)
+
 ## [Roadmap](https://youtu.be/3on3S-fbeRI?si=dmu69duKfzS1SFa-) to master GenAI:
 
 - Linear Algebra [[COURSE 28+ Hrs]](https://youtube.com/playlist?list=PLE7DDD91010BC51F8&si=N3GT_rotF92ZYSXD)
