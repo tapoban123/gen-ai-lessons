@@ -16,3 +16,4 @@ splitter = CharacterTextSplitter(
 result = splitter.split_text(text=text)
 
 print(result)
+print(result[0])
