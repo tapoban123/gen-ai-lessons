@@ -2,7 +2,7 @@ from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from utils.my_enums import API_KEYS, LLM_MODELS
 
 client = ChatNVIDIA(
-    model=LLM_MODELS.DEEPSEEK_R1_MODEL,
+    model=LLM_MODELS.LLAMA3_3SW_INSTRUCT,
     api_key=API_KEYS.NVIDIA_NIM_API_KEY,
     temperature=0.6,
     top_p=0.7,

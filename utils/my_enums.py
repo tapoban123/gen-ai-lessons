@@ -30,6 +30,7 @@ class LLM_MODELS(Enum):
     HF_MODEL_MINICHAT = "GeneZC/MiniChat-2-3B"
     HF_EMBEDDING_MODEL_SENTENCE_TRANSFORMER = "sentence-transformers/all-MiniLM-L6-v2"
     GEMINI_EMBEDDING_MODEL = "models/text-embedding-004"
+    LLAMA3_3SW_INSTRUCT = "meta/llama-3.3-70b-instruct"
     NVIDIA_NEMOTRON_ULTRA_MODEL = "nvidia/llama-3.1-nemotron-ultra-253b-v1:free"
     DEEPSEEK_V3_BASE_MODEL = "deepseek/deepseek-v3-base:free"
     DEEPSEEK_R1_MODEL = "deepseek-ai/deepseek-r1"
