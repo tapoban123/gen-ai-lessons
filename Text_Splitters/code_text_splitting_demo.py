@@ -2,8 +2,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter,Language
 
 
 code = """
-def hello():
-    return "Hello World"
+def hello():    return "Hello World"
 """
 
 # An example of Document-structure based text splitting.
