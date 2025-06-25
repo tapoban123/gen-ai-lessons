@@ -1,7 +1,7 @@
 from langchain.tools import tool
 
 @tool
-def add(a: int, b: int):
+def add(a: int, b: int) -> int:
     """Method to get the sum of two numbers."""
     return a + b
 
