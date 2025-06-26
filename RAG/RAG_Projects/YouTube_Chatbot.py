@@ -43,4 +43,4 @@ vector_store = Chroma.from_documents(
     embedding=embeddings_model,
 )
 
-print(vector_store.get_by_ids)
+print(vector_store.get(limit=1))
