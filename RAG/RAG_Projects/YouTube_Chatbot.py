@@ -41,5 +41,6 @@ embeddings_model = GoogleGenerativeAIEmbeddings(
 vector_store = Chroma.from_documents(
     documents=chunks,
     embedding=embeddings_model,
-    
 )
+
+print(vector_store.get_by_ids)
