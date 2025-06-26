@@ -22,7 +22,7 @@ def get_video_transcript(video_id: str) -> str:
 
 
 # video_url = input("Enter YouTube video URL: ")
-video_url = "https://youtu.be/EzYaFF7ahKw?si=xnIcMP4-etZdDct1"
+video_url = "https://youtu.be/r-iLBNaCTDk?si=xSfRuYUxVq3lzHot"
 video_id = extract.video_id(url=video_url)
 transcript = get_video_transcript(video_id=video_id)
 
@@ -43,4 +43,43 @@ vector_store = Chroma.from_documents(
     embedding=embeddings_model,
 )
 
-print(vector_store.get(limit=1))
+
+### Setting up the Retriever
+retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 4})
+# search_type (Optional[str]): Defines the type of search that
+# the Retriever should perform.
+# Can be "similarity" (default), "mmr", or "similarity_score_threshold".
+
+
+result = retriever.invoke("What is github actions?")
+
+
+## Setting up the LLM
+llm = ChatGoogleGenerativeAI(
+    model=LLM_MODELS.GEMINI_MODEL,
+    api_key=API_KEYS.GEMINI_API_KEY,
+)
+prompt = PromptTemplate(
+    template="""You are a helpful assistant.
+    Answer only from the provided transcript context.
+    If the transcript context is insufficient, just say you don't know.
+    
+    {context}
+    Question: {question}
+    """,
+    input_variables=["context", "question"],
+)
+
+
+question = "What are Github actions?"
+
+retrieved_docs = retriever.invoke(question)
+
+context_text = "\n\n".join(doc.page_content for doc in retrieved_docs)
+
+final_prompt = prompt.invoke({"context": context_text, "question": question})
+
+
+## Generation
+result = llm.invoke(final_prompt)
+print(result.content)
