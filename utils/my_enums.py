@@ -28,10 +28,16 @@ class LLM_MODELS(Enum):
     HF_MODEL_TINY_LLAMA = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
     HF_MODEL_MS_BITNET = "microsoft/bitnet-b1.58-2B-4T"
     HF_MODEL_MINICHAT = "GeneZC/MiniChat-2-3B"
-    HF_EMBEDDING_MODEL_SENTENCE_TRANSFORMER = "sentence-transformers/all-MiniLM-L6-v2"
-    GEMINI_EMBEDDING_MODEL = "models/text-embedding-004"
     LLAMA3_3SW_INSTRUCT = "meta/llama-3.3-70b-instruct"
     NVIDIA_NEMOTRON_ULTRA_MODEL = "nvidia/llama-3.1-nemotron-ultra-253b-v1:free"
     DEEPSEEK_V3_BASE_MODEL = "deepseek/deepseek-v3-base:free"
     DEEPSEEK_R1_MODEL = "deepseek-ai/deepseek-r1"
     QWEN_VL_MODEL = "qwen/qwen2.5-vl-32b-instruct:free"
+
+class EMBEDDING_MODELS(Enum):
+    GEMINI_EMBEDDING_MODEL= "models/gemini-embedding-exp-03-07"
+    HF_EMBEDDING_MODEL_SENTENCE_TRANSFORMER = "sentence-transformers/all-MiniLM-L6-v2"
+    GEMINI_EMBEDDING_MODEL2 = "models/text-embedding-004"
+
+
+    

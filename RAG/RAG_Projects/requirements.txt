@@ -1,5 +1,7 @@
 youtube-transcript-api
+pytube
 langchain
 langchain_community
 langchain_core
 langchain-google-genai 
+chromadb
