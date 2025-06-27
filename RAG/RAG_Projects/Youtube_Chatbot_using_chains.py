@@ -3,11 +3,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 from pytube import extract
 from utils.my_enums import API_KEYS, LLM_MODELS, EMBEDDING_MODELS
 
 
-# Indexing (Document Ingestion)
 def get_video_transcript(video_id: str) -> str:
     try:
         transcript = YouTubeTranscriptApi.get_transcript(
@@ -21,7 +22,10 @@ def get_video_transcript(video_id: str) -> str:
         return "Transcripts disabled for this video."
 
 
-# video_url = input("Enter YouTube video URL: ")
+def format_docs(retrieved_docs) -> str:
+    return "\n\n".join(doc.page_content for doc in retrieved_docs)
+
+
 video_url = "https://youtu.be/r-iLBNaCTDk?si=xSfRuYUxVq3lzHot"
 video_id = extract.video_id(url=video_url)
 transcript = get_video_transcript(video_id=video_id)
@@ -37,25 +41,18 @@ embeddings_model = GoogleGenerativeAIEmbeddings(
     google_api_key=API_KEYS.GEMINI_API_KEY,
 )
 
-# embeddings = embeddings_model.embed_documents(chunks)
 vector_store = Chroma.from_documents(
     documents=chunks,
     embedding=embeddings_model,
 )
 
-
-### Setting up the Retriever
 retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 4})
-# search_type (Optional[str]): Defines the type of search that
-# the Retriever should perform.
-# Can be "similarity" (default), "mmr", or "similarity_score_threshold".
 
-
-## Setting up the LLM
 llm = ChatGoogleGenerativeAI(
     model=LLM_MODELS.GEMINI_MODEL,
     api_key=API_KEYS.GEMINI_API_KEY,
 )
+
 prompt = PromptTemplate(
     template="""You are a helpful assistant.
     Answer only from the provided transcript context.
@@ -67,16 +64,15 @@ prompt = PromptTemplate(
     input_variables=["context", "question"],
 )
 
+context_chain = RunnableParallel(
+    {
+        "context": retriever | format_docs,
+        "question": RunnablePassthrough(),
+    }
+)
 
-question = "What are Github actions?"
+chain = context_chain | prompt | llm | StrOutputParser()
 
-retrieved_docs = retriever.invoke(question)
+result = chain.invoke("What are Github actions?")
 
-context_text = "\n\n".join(doc.page_content for doc in retrieved_docs)
-
-final_prompt = prompt.invoke({"context": context_text, "question": question})
-
-
-## Generation
-result = llm.invoke(final_prompt)
-print(result.content)
+print(result)
