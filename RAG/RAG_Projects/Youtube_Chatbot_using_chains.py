@@ -3,7 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
 from pytube import extract
 from utils.my_enums import API_KEYS, LLM_MODELS, EMBEDDING_MODELS
@@ -66,7 +66,7 @@ prompt = PromptTemplate(
 
 context_chain = RunnableParallel(
     {
-        "context": retriever | format_docs,
+        "context": retriever | RunnableLambda(format_docs),
         "question": RunnablePassthrough(),
     }
 )

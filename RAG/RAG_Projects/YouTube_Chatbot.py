@@ -30,11 +30,10 @@ transcript = get_video_transcript(video_id=video_id)
 splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 chunks = splitter.create_documents([transcript])
 
-
 # Indexing (Embedding Generation & Storing in Vector Stores)
 embeddings_model = GoogleGenerativeAIEmbeddings(
     model=EMBEDDING_MODELS.GEMINI_EMBEDDING_MODEL2.value,
-    google_api_key=API_KEYS.GEMINI_API_KEY,
+    google_api_key=API_KEYS.GEMINI_API_KEY.value,
 )
 
 # embeddings = embeddings_model.embed_documents(chunks)
@@ -42,7 +41,6 @@ vector_store = Chroma.from_documents(
     documents=chunks,
     embedding=embeddings_model,
 )
-
 
 ### Setting up the Retriever
 retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 4})
@@ -67,7 +65,6 @@ prompt = PromptTemplate(
     input_variables=["context", "question"],
 )
 
-
 question = "What are Github actions?"
 
 retrieved_docs = retriever.invoke(question)
@@ -75,7 +72,6 @@ retrieved_docs = retriever.invoke(question)
 context_text = "\n\n".join(doc.page_content for doc in retrieved_docs)
 
 final_prompt = prompt.invoke({"context": context_text, "question": question})
-
 
 ## Generation
 result = llm.invoke(final_prompt)
