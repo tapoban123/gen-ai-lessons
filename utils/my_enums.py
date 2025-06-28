@@ -9,6 +9,7 @@ GOOGLE_SERP_API = os.environ.get("GOOGLE_SERP_API")
 HF_API = os.environ.get("HUGGING_FACE_API_TOKEN")
 OPEN_ROUTER_API = os.environ.get("OPEN_ROUTER_API_KEY")
 NVIDIA_NIM_API = os.environ.get("NVIDIA_NIM_API_KEY")
+EXCHANGE_RATE_API = os.environ.get("EXCHANGE_RATE_API_KEY")
 
 
 class BASE_URLS(Enum):
@@ -21,6 +22,7 @@ class API_KEYS(Enum):
     HF_API_KEY = HF_API
     OPEN_ROUTER_API_KEY = OPEN_ROUTER_API
     NVIDIA_NIM_API_KEY = NVIDIA_NIM_API
+    EXCHANGE_RATE_API_KEY = EXCHANGE_RATE_API
 
 
 class LLM_MODELS(Enum):
@@ -34,10 +36,8 @@ class LLM_MODELS(Enum):
     DEEPSEEK_R1_MODEL = "deepseek-ai/deepseek-r1"
     QWEN_VL_MODEL = "qwen/qwen2.5-vl-32b-instruct:free"
 
+
 class EMBEDDING_MODELS(Enum):
-    GEMINI_EMBEDDING_MODEL= "models/gemini-embedding-exp-03-07"
+    GEMINI_EMBEDDING_MODEL = "models/gemini-embedding-exp-03-07"
     HF_EMBEDDING_MODEL_SENTENCE_TRANSFORMER = "sentence-transformers/all-MiniLM-L6-v2"
     GEMINI_EMBEDDING_MODEL2 = "models/text-embedding-004"
-
-
-    
