@@ -34,6 +34,9 @@
 - AI Agents
   - In-depth knowledge
   - Building them
+- RAG Model Evaluation
+  - Ragas
+  - LangSmith
 - Build Portfolio apps
 
 ## Platforms for Open-Source/Free LLM apis
