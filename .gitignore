@@ -3,6 +3,7 @@
 .vscode/
 __pycache__/
 .DS_Store
+.venvs
 
 # secrets
 .env
