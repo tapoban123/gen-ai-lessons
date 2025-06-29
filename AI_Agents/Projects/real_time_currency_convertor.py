@@ -1,7 +1,11 @@
 from langchain_core.tools import tool, InjectedToolArg
-from langchain_core.messages import HumanMessage, ToolMessage
+from langchain_core.messages import HumanMessage
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import PydanticOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
+
 from utils.my_enums import API_KEYS, LLM_MODELS
+from pydantic import BaseModel, Field
 from typing import Annotated
 import requests
 
@@ -20,40 +24,56 @@ def convert(base: float, conversion_rate: Annotated[float, InjectedToolArg]) -> 
     return base * conversion_rate
 
 
-query = "Get the conversion factor between USD and INR and convert 20 dollars to INR?"
-chat_history = [HumanMessage(query)]
+class CurrencyModel(BaseModel):
+    base: str = Field(description="Currency code of base currency.")
+    target: str = Field(description="Currency code of target currency.")
+    amount: float = Field(description="Amount to be converted to a different currency.")
+
 
 llm = ChatGoogleGenerativeAI(
     model=LLM_MODELS.GEMINI_MODEL.value,
     api_key=API_KEYS.GEMINI_API_KEY.value,
 )
 
+currency_output_parser = PydanticOutputParser(pydantic_object=CurrencyModel)
+
+currency_prompt = PromptTemplate(
+    template="""Get the currency codes and amount to be converted from the following query:
+    {query}
+    \n{format_instructions}
+    """,
+    input_variables=["query"],
+    partial_variables={"format_instructions": currency_output_parser.get_format_instructions()}
+)
+
+user_query = input("Enter a query: ")
+currency_chain = currency_prompt | llm | currency_output_parser
+currency_details = currency_chain.invoke({"query": user_query})
+
+# query = input("Enter a query: ")
+# chat_history = [HumanMessage(f"Get the currency codes and conversion factor of the given query and {query}")]
+
+query = f"""Get the conversion factor between {currency_details.base} and {currency_details.target} 
+and convert {currency_details.amount} {currency_details.base} to {currency_details.target}?"""
+chat_history = [HumanMessage(query)]
+
 llm_with_tools = llm.bind_tools([get_conversion_factor, convert])
 
 ai_message = llm_with_tools.invoke(chat_history)
 chat_history.append(ai_message)
 
-# query2 = "based on the conversion factor can you convert 20 dollars to INR?"
-# chat_history.append(HumanMessage(query2))
-
-# llm_with_tools.invoke(chat_history)
-
-# result = get_conversion_factor.invoke({"base": "USD", "target": "INR"})
-# result = convert.invoke({"base": "22", "conversion_rate": "85.5582"})
-
-print(chat_history)
-print(ai_message.tool_calls)
-
 for msg in ai_message.tool_calls:
-    tool_message: ToolMessage
+    conversion_factor: float
 
     if msg["name"] == "get_conversion_factor":
-        tool_message = get_conversion_factor.invoke(msg)
+        tool_msg = get_conversion_factor.invoke(msg)
+        conversion_factor = tool_msg.content
+        chat_history.append(tool_msg)
     elif msg["name"] == "convert":
+        msg["args"]["conversion_rate"] = conversion_factor
         tool_message = convert.invoke(msg)
-
-    chat_history.append(tool_message)
-
-
+        chat_history.append(tool_message)
+#
+# print(chat_history)
 result = llm_with_tools.invoke(chat_history)
 print(result.content)
