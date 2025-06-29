@@ -25,7 +25,7 @@
 - Prompt Engineering - Design and Craft effective prompts [[COURSE 22+ Hrs]](https://www.udemy.com/course/prompt-engineering-for-ai/?couponCode=KEEPLEARNING)
 - [Langchain](https://github.com/langchain-ai/langchain) [[COURSE 19+ Hrs]](https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0&si=QsClH2RVArbJfspp) 
   - Open-source LLMs
-  - Langgraph [[COURSE 15+ Hrs]](https://youtube.com/playlist?list=PLQxDHpeGU14AJ4sBRWLBqjMthxrLXJmgF&si=wOkjSc2NlBjWVvNM)
+  - Langgraph [[COURSE Ongoing]](https://www.youtube.com/playlist?list=PLKnIA16_RmvYsvB8qkUQuJmJNuiCUJFPL)
   - Langsmith
   - Langflow
   - Langserve
