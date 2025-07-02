@@ -18,7 +18,7 @@ dataclasses-json==0.6.7
 debugpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_6a37he2v_t/croot/debugpy_1736267437603/work
 decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1740384970518/work
 distro==1.9.0
-duckduckgo_search==8.0.4
+duckduckgo_search
 exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1733208806608/work
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1745502089858/work
 feedparser==6.0.11

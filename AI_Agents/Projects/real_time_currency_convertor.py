@@ -73,7 +73,7 @@ for msg in ai_message.tool_calls:
         msg["args"]["conversion_rate"] = conversion_factor
         tool_message = convert.invoke(msg)
         chat_history.append(tool_message)
-#
+
 # print(chat_history)
 result = llm_with_tools.invoke(chat_history)
 print(result.content)
