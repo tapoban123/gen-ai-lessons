@@ -34,6 +34,6 @@ agent_executor = AgentExecutor(
 )
 
 # 6. Invoke input
-# response = agent_executor.invoke({"input":"What is the population of the capital of India?"})
-response = search_tool.invoke("What is the population of India?")
+response = agent_executor.invoke({"input":"What is the population of the capital of India?"})
+# response = search_tool.invoke("What is the population of India?")
 print(response)
